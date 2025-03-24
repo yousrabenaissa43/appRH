@@ -41,7 +41,7 @@ public class HomeController : Controller
    }
     public ViewResult AllEmployees() //public IActionResult All Employees()
     {
-        return View();
+        return View(Repository.GetEmployees());
     }
 
 }

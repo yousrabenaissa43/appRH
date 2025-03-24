@@ -2,10 +2,28 @@
 
 <html> 
 <head>
-<title>All Employees</title>
+	<title>All Employees</title>
 </head>
 <body>
-<h2>All Employees Page</h2>
+	<h2>All Employees Page</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Departement</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (Employee emp in Model)
+			{
+			 <tr>
+			   <td> @emp.EmployeeName </td>
+			   <td> @emp.Departement </td>
+			</tr>
+             }
+        </tbody>
+  </table>
+
 </body>
 
 </html>
