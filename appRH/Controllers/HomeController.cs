@@ -36,7 +36,12 @@ public class HomeController : Controller
     [HttpPost]
    public ViewResult Employees(Employee employee) //public IActionResult Employees()
    {
+        Repository.AddEmployee(employee);
+        return View("confirmPage",employee);
+   }
+    public ViewResult AllEmployees() //public IActionResult All Employees()
+    {
         return View();
-      }
+    }
 
-  }
+}
