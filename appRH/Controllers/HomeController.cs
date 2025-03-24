@@ -28,9 +28,15 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+    [HttpGet]
     public ViewResult Employees() //public IActionResult Employees()
     {
         return View();
     }
+    [HttpPost]
+   public ViewResult Employees(Employee employee) //public IActionResult Employees()
+   {
+        return View();
+      }
 
-}
+  }
