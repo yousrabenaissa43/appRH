@@ -1,8 +1,8 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using MvcMovie.Models;
+using appRH.Models;
 
-namespace MvcMovie.Controllers;
+namespace appRH.Controllers;
 
 public class HomeController : Controller
 {
@@ -28,4 +28,9 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+    public ViewResult Employees() //public IActionResult Employees()
+    {
+        return View();
+    }
+
 }
