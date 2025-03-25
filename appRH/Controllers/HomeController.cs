@@ -39,9 +39,9 @@ public class HomeController : Controller
         Repository.AddEmployee(employee);
         return View("confirmPage",employee);
    }
-    public ViewResult AllEmployees() //public IActionResult All Employees()
+    public ViewResult AllEmployees()
     {
-        return View(Repository.GetEmployees());
+        return View(Repository.GetEmployees().Where(emp => emp.isActive == true));
     }
 
 }
