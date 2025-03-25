@@ -11,6 +11,9 @@
 			<tr>
 				<th>Name</th>
 				<th>Departement</th>
+                <th>Job</th>
+                <th>Birth Date</th>
+                <th>Email</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -19,6 +22,9 @@
 			 <tr>
 			   <td> @emp.EmployeeName </td>
 			   <td> @emp.Departement </td>
+               <td>@emp.JobTitle</td>
+               <td>@emp.BirthDate.ToShortDateString()</td>
+               <td>@emp.EmailAddress</td>
 			</tr>
              }
         </tbody>
