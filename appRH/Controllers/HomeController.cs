@@ -36,9 +36,14 @@ public class HomeController : Controller
     [HttpPost]
    public ViewResult Employees(Employee employee) //public IActionResult Employees()
    {
-        Repository.AddEmployee(employee);
-        return View("confirmPage",employee);
-   }
+        if (ModelState.IsValid)
+        {
+            Repository.AddEmployee(employee);
+            return View("confirmPage", employee);
+        }
+        else
+            return View();
+    }
     public ViewResult AllEmployees()
     {
         return View(Repository.GetEmployees().Where(emp => emp.isActive == true));

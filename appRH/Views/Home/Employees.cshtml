@@ -17,6 +17,7 @@
 
 <body>
   <form asp-action="Employees" method="post"> <h1>Employees Form</h1>
+      <div asp-validation-summary="All"></div>
  <br />
   <div>
   <label asp-for="EmployeeName">Employee Name</label> <input asp-for="EmployeeName" />
