@@ -2,7 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-   Layout = null;
+   //Layout = null;
 }
 @model Employee 
 <!DOCTYPE html>
@@ -12,43 +12,45 @@
 <head>
 
 <title></title>
-
+<style>
+      .input-validation-error{ border: 1px solid darkred; background-color: #ffcccb;}
+      .validation-summary-errors{ color: red; font-weight: bolder;}
+</style>
 </head>
 
 <body>
   <form asp-action="Employees" method="post"> <h1>Employees Form</h1>
       <div asp-validation-summary="All"></div>
  <br />
-  <div>
-  <label asp-for="EmployeeName">Employee Name</label> <input asp-for="EmployeeName" />
+  <div class="form-group">
+  <label asp-for="EmployeeName">Employee Name</label> <input asp-for="EmployeeName" class="form-control form-control-sm" placeholder="Entrer le nom d'employé" />
  </div>
   <br />
-<div>
+<div class="form-group">
    <label asp-for="Departement">Departement</label> <select asp-for="Departement">
    <option></option>
    <option value="operations">Operations</option> <option value="it">Info Tech</option>
    <option value="finance">Finance</option> </select>
 </div>
 <br />
-<div>
-    <label asp-for="isActive">Active ?</label>
-    <input type="checkbox" asp-for="isActive" /> 
+<div class="form-check form-check-inline">
+<label asp-for="isActive" class="form-check-label">Active ?</label> 
+<input type="checkbox" asp-for="isActive" class="form-check-input"/> 
 </div>
 <br />
-<div>
-   <label asp-for-"JobTitle">Job Title</label> <input asp-for="JobTitle" />
+<div  class="form-group">
+   <label asp-for="JobTitle">Job Title</label> <input asp-for="JobTitle" class="form-control form-control-sm" placeholder="Entrer le job" />
 </div>
 <br />
-<div>
-<label asp-for-"BirthDate">Birth Date</label> <input type="date" asp-for-"BirthDate" />
+<div class="form-group">
+<label asp-for="BirthDate">Birth Date</label> <input type="date" asp-for="BirthDate" />
 </div>
 <br />
-<div>
-<label asp-for="EmailAddress">Email Address</label> <input type="email" asp-for-"EmailAddress" /> 
+<div class="form-group">
+<label asp-for="EmailAddress">Email Address</label> <input type="email" asp-for="EmailAddress" class="form-control form-control-sm" placeholder="Entrer l'email"/> 
 </div>
-<br />
-
-<button type="submit">Save</button>
+<br/>
+<button type="submit" class="btn btn-dark">Save</button>
 
 </form>
 
