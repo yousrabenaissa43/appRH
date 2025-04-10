@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using appRH.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<appRHContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("appRHContext") ?? throw new InvalidOperationException("Connection string 'appRHContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

@@ -13,6 +13,7 @@ namespace appRH.Models
     public class Employee
     {
 
+        public string Id { get; set; }
         [Required(ErrorMessage ="Name is missing")]
         [StringLength(6,MinimumLength =3, ErrorMessage = "Invalid Name")]
          public string EmployeeName { get; set; }
