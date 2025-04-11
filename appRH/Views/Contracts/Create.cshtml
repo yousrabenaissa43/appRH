@@ -1,0 +1,68 @@
+﻿@model appRH.Models.Contract
+
+@{
+    ViewData["Title"] = "Create Contract";
+}
+
+<div class="container mt-4">
+    <h1 class="text-primary">Create Contract</h1>
+    <h4 class="text-muted">Enter contract details</h4>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card shadow p-4">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="EmployeeId" class="form-label fw-bold"></label>
+                        <input asp-for="EmployeeId" class="form-control" placeholder="Enter Employee ID" />
+                        <span asp-validation-for="EmployeeId" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="StartDate" class="form-label fw-bold"></label>
+                        <input asp-for="StartDate" type="date" class="form-control" />
+                        <span asp-validation-for="StartDate" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="EndDate" class="form-label fw-bold"></label>
+                        <input asp-for="EndDate" type="date" class="form-control" />
+                        <span asp-validation-for="EndDate" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="ContractType" class="form-label fw-bold"></label>
+                        <select asp-for="ContractType" class="form-select">
+                            <option value="">Select Contract Type</option>
+                            <option value="Full-Time">Full-Time</option>
+                            <option value="Part-Time">Part-Time</option>
+                            <option value="Internship">Internship</option>
+                            <option value="Freelance">Freelance</option>
+                        </select>
+                        <span asp-validation-for="ContractType" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Salary" class="form-label fw-bold"></label>
+                        <input asp-for="Salary" type="number" class="form-control" placeholder="Enter Salary" />
+                        <span asp-validation-for="Salary" class="text-danger"></span>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <a asp-action="Index" class="btn btn-secondary"><i class="bi bi-arrow-left"></i> Back to List</a>
+                        <button type="submit" class="btn btn-success"><i class="bi bi-check-lg"></i> Create</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

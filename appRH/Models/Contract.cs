@@ -7,17 +7,17 @@ namespace appRH.Models
     {
         [Key]
         public int ContractId { get; set; }
-        [ForeignKey("Employee")]
-        public int EmployeeId { get; set; }  // Foreign Key to Employee
+        [ForeignKey("Id")]
+        public int EmployeeId { get; set; }  
 
         [Required]
         public DateTime StartDate { get; set; }
 
-        public DateTime? EndDate { get; set; }  // Nullable for indefinite contracts
+        public DateTime? EndDate { get; set; }  
 
         [Required]
         [StringLength(50)]
-        public string ContractType { get; set; }  // e.g., "Full-Time", "Part-Time", "Freelance"
+        public string ContractType { get; set; } 
 
         [Required]
         [Column(TypeName = "decimal(18,2)")]

@@ -15,5 +15,6 @@ namespace appRH.Data
         }
 
         public DbSet<appRH.Models.Employee> Employee { get; set; } = default!;
+        public DbSet<appRH.Models.Contract> Contract { get; set; } = default!;
     }
 }

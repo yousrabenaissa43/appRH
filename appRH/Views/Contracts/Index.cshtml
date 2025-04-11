@@ -1,0 +1,55 @@
+﻿@model IEnumerable<appRH.Models.Contract>
+
+@{
+    ViewData["Title"] = "Contracts List";
+}
+
+<div class="container mt-4">
+    <h1 class="mb-4 text-primary">Contracts</h1>
+
+    <p>
+        <a asp-action="Create" class="btn btn-success"><i class="bi bi-plus-lg"></i> Create New</a>
+    </p>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover shadow-sm">
+            <thead class="table-dark text-center">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.EmployeeId)</th>
+                    <th>@Html.DisplayNameFor(model => model.StartDate)</th>
+                    <th>@Html.DisplayNameFor(model => model.EndDate)</th>
+                    <th>@Html.DisplayNameFor(model => model.ContractType)</th>
+                    <th>@Html.DisplayNameFor(model => model.Salary)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                        <tr class="text-center align-middle">
+                            <td>@Html.DisplayFor(modelItem => item.EmployeeId)</td>
+                            <td>@Html.DisplayFor(modelItem => item.StartDate)</td>
+                            <td>@Html.DisplayFor(modelItem => item.EndDate)</td>
+                            <td>
+                                <span class="badge bg-info text-dark">@Html.DisplayFor(modelItem => item.ContractType)</span>
+                            </td>
+                            <td>
+                                <span class="fw-bold text-success">$@Html.DisplayFor(modelItem => item.Salary)</span>
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.ContractId" class="btn btn-warning btn-sm">
+                                    <i class="bi bi-pencil"></i> Edit
+                                </a>
+                                <a asp-action="Details" asp-route-id="@item.ContractId" class="btn btn-info btn-sm">
+                                    <i class="bi bi-eye"></i> Details
+                                </a>
+                                <a asp-action="Delete" asp-route-id="@item.ContractId" class="btn btn-danger btn-sm">
+                                    <i class="bi bi-trash"></i> Delete
+                                </a>
+                            </td>
+                        </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
